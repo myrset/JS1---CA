@@ -68,6 +68,11 @@ main {
     width: 100px;
 }
 
+.jacket p {
+    margin-bottom: 10px;
+    
+}
+
 .image-jacket:hover {
     transform: scale(1.05);
 }
@@ -80,7 +85,7 @@ button {
 
 button:hover {
 transform: scale(1.09);
-background-color: rgb(107, 213, 107);
+background-color: rgb(23, 215, 45);
 transition: transform 0.2s;
 
 }

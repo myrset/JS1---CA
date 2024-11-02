@@ -1,31 +1,30 @@
-// Fetching the API
-
+// Collecting consts!
 
 const apiUrl = 'https://v2.api.noroff.dev/rainy-days';
 
 const productsHtml = document.getElementById("products") // getElementById
 
+const params = new URLSearchParams(window.location.search);
+const productID = params.get('id');
+
+console.log("Product ID", productID)
+
+
+// Fetching the API
+
 console.log(productsHtml)
-
-
-
 
     async function fetchData() {
 
- 
-
-        const response = await fetch(apiUrl)
+         const response = await fetch(apiUrl)
 
         if (!response.ok) {
             throw new Error('No answer from server ' + response.statusText); 
             
         } 
-
-
         
         const data = await response.json();
-
-  
+ 
 
         data.data.forEach(jacket => {
 
@@ -50,14 +49,14 @@ console.log(productsHtml)
             <article class="jacket">
             <p> ${jacket.title} </p> 
             <p> Price: ${jacket.price} </p>
-           
-            <img  class="image-jacket" src=${jacket.image.url} />
+            <a href="../resources/product/index.html?id=${jacket.id}">
+            <img class="image-jacket" src="${jacket.image.url}" alt="${jacket.title}" />
+            </a>
             <button onClick="addToCart()"> Add to cart </button>
             <p>  ${salg}
             </article>
             `
-
-       
+      
         })
 
 
@@ -65,7 +64,7 @@ console.log(productsHtml)
 
     fetchData();
   
-        // Helpful for further work on products
+        // Helpful for further work on product page
 
             // <p> Color: ${jacket.baseColor} </p> 
             // <p> Description: ${jacket.description} </p> 
@@ -76,7 +75,7 @@ console.log(productsHtml)
             // <p> Discounted price: ${jacket.discountedPRice} </p> 
 
 
-
+            
 console.log("Morning!");
 
 function addToCart(id) {
