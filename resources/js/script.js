@@ -81,5 +81,3 @@ console.log("Morning!");
 function addToCart(id) {
     console.log("I am the jacket id", id)
 }
-
-
