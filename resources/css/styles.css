@@ -87,6 +87,7 @@ button:hover {
 transform: scale(1.09);
 background-color: rgb(23, 215, 45);
 transition: transform 0.2s;
+cursor: pointer;
 
 }
 

@@ -1,6 +1,11 @@
 const params = new URLSearchParams(window.location.search);
 const productID = params.get('id');
 
+// productID er ID som er fra hver jacket. 
+// Så om du sjekker fetchAndDisplayJacket
+
+
+
 const productsHtml = document.getElementById("products");
 console.log("Product ID", productID);
 
@@ -46,21 +51,18 @@ console.log("Product ID", productID);
 
 
 async function fetchAndDisplayJacket() {
-    const apiUrl = 'https://v2.api.noroff.dev/rainy-days';
+    const apiUrl = `https://v2.api.noroff.dev/rainy-days/${productID}`;
+    // Trykk på APIurl i console Nå funker det
+    console.log("apiUrl", apiUrl)
 
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-
-        // Find the specific jacket by ID
-
-
-        const jacket = data.data.find(item => item.id === productID);
-        if (jacket) {
-            displayJacket(jacket);
-        } else {
+        console.log("data", data.data)
+        displayJacket(data.data);
+        if (!response) {
             productsHtml.innerHTML = "<p>Jacket not found.</p>";
-        }
+        } 
     } catch (error) {
         console.error("Error fetching data:", error);
         productsHtml.innerHTML = "<p>There was an error loading the product details.</p>";

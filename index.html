@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/styles.css">
-   
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="resources/css/styles.css" />
+
     <title>Rainy days</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            
-            <a href="resources/checkout/index.html"><img src="resources/img/cart.png" class="nav-icon" alt="Your very own shopping cart"></a>
-            
-        </nav>
+      <nav class="navbar">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+
+        <a href="resources/checkout/index.html"
+          ><img
+            src="resources/img/cart.png"
+            class="nav-icon"
+            alt="Your very own shopping cart"
+        /></a>
+      </nav>
     </header>
     <main>
-        
-        
+      <select name="categories" id="category">
+        <option value="jackets">All jackets</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
 
-        <div id="products"></div>
-        <section id="products">
-
-        </section>
+      <div id="products"></div>
+      <section id="products"></section>
     </main>
     <script src="resources/js/script.js"></script>
-</body>
+  </body>
 </html>
