@@ -1,11 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 const productID = params.get('id');
 
-// productID er ID som er fra hver jacket. 
-// Så om du sjekker fetchAndDisplayJacket
-
-
-
 const productsHtml = document.getElementById("products");
 console.log("Product ID", productID);
 
@@ -52,8 +47,7 @@ console.log("Product ID", productID);
 
 async function fetchAndDisplayJacket() {
     const apiUrl = `https://v2.api.noroff.dev/rainy-days/${productID}`;
-    // Trykk på APIurl i console Nå funker det
-    console.log("apiUrl", apiUrl)
+    // Da slipper du å hente ALLE items også filtrere ned på den du trenger.
 
     try {
         const response = await fetch(apiUrl);
