@@ -3,21 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>Rainy days</title>
   </head>
-  <body>
+  <body onload="displayCart()">
     <header>
-      <nav>
+      <nav class="navbar">
         <li><a href="/index.html" class="nav-link">Home</a></li>
-        <a href="../checkout/index.html"
-          ><img
+        <a href="resources/checkout/index.html">
+          <img
             src="../img/cart.png"
             class="nav-icon"
             alt="Your very own shopping cart"
-        /></a>
+          />
+          <span id="cart-count">0</span>
+        </a>
       </nav>
+      <h1>Bla bla bla rar placeholder tekst</h1>
     </header>
-    <main></main>
+
+    <main>
+      <section id="cart-items"></section>
+      <p id="cart-total">Total: 0 kr</p>
+    </main>
+
+    <script src="../js/checkout.js"></script>
   </body>
 </html>
