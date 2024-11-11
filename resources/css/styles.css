@@ -105,3 +105,26 @@ cart:hover {
     padding: 20px;
     
 }
+
+/* Styling for the cart icon container */
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Styling for the item count badge */
+#cart-count {
+    position: absolute;
+    top: -5px;  /* Adjust position to align with the top right corner */
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

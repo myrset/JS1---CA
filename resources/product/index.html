@@ -8,15 +8,17 @@
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="navbar">
         <li><a href="/index.html" class="nav-link">Home</a></li>
-
-        <a href="../checkout/index.html"
-          ><img
+        <a href="../checkout/index.html" class="cart-container">
+          <img
             src="../img/cart.png"
             class="nav-icon"
-            alt="Your very own shopping cart"
-        /></a>
+            alt="Your shopping cart"
+          />
+          <span id="cart-count">0</span>
+          <!-- Badge to show the number of items -->
+        </a>
       </nav>
     </header>
     <main>
