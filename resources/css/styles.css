@@ -106,16 +106,16 @@ cart:hover {
     
 }
 
-/* Styling for the cart icon container */
+/* Styling for my cart icon container */
 .cart-container {
     position: relative;
     display: inline-block;
 }
 
-/* Styling for the item count badge */
+/* Styling for count badge */
 #cart-count {
     position: absolute;
-    top: -5px;  /* Adjust position to align with the top right corner */
+    top: -5px;  /* Here I can adjust the positioning */
     right: -5px;
     background-color: red;
     color: white;
@@ -127,6 +127,36 @@ cart:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+}
+
+#loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(248, 3, 228, 0.2); 
+    border-top: 4px solid #4d63db;         
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* This is making it spin like a wheel */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 
