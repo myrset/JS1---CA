@@ -40,7 +40,7 @@ async function fetchData() {
             article.innerHTML = `
                 <p>${jacket.title}</p>
                 <p>Price: ${jacket.price} kr</p>
-                <a href="../resources/product/index.html?id=${jacket.id}">
+                <a href="../product/index.html?id=${jacket.id}">
                     <img class="image-jacket" src="${jacket.image.url}" alt="${jacket.title}" />
                 </a>
                 <p>${isOnSale}</p>
@@ -78,7 +78,7 @@ async function filterByCategory(value) {
         article.innerHTML = `
             <p>${jacket.title}</p>
             <p>Price: ${jacket.price} kr</p>
-            <a href="../resources/product/index.html?id=${jacket.id}">
+            <a href="../product/index.html?id=${jacket.id}">
                 <img class="image-jacket" src="${jacket.image.url}" alt="${jacket.title}" />
             </a>
             <p>${isOnSale}</p>
