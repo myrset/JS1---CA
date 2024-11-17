@@ -24,8 +24,6 @@
 
 
 
-
-
 function displayCart() {
     
     const cart = JSON.parse(localStorage.getItem('cart')) || [];

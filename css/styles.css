@@ -5,6 +5,21 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Pirata One', cursive; 
+    font-size: 16px;
+    color: #333; 
+    line-height: 1.6; 
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Pirata One', cursive; 
+  }
+  
+  p {
+    font-family: 'Pirata One', sans-serif; 
+  }
+
 nav {
     display: flex;
     list-style: none;
@@ -167,4 +182,21 @@ cart:hover {
   
   .empty-cart {
     display: none;
+  }
+
+  .main-confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    padding: 20px;
+    font-size: 20px;
+    border: 5px solid;
+    border-radius: 10px;
+    border-image: linear-gradient(
+      to right,
+      rgba(255, 0, 150, 0.8),
+      rgba(0, 150, 255, 0.8)
+    );
+    border-image-slice: 1;    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
   }

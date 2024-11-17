@@ -3,24 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
     <title>Rainy days</title>
   </head>
   <body>
     <header>
-      <nav>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="../product/index.html" class="nav-link">Product</a></li>
-        <a href="../checkout/index.html"
-          ><img
-            src="../img/cart.png"
+      <nav class="navbar">
+        <li><a href="../../index.html" class="nav-link">Home</a></li>
+        <a href="../../checkout/index.html" class="cart-container">
+          <img
+            src="../../img/cart.png"
             class="nav-icon"
-            alt="Your very own shopping cart"
-        /></a>
+            alt="Your shopping cart"
+          />
+          <span id="cart-count">0</span>
+          <!-- Badge to show the number of items -->
+        </a>
       </nav>
     </header>
     <main>
-      <h1>SUCCESS</h1>
+      <div class="main-confirmation">
+        <h1>SUCCESS</h1>
+        <p>Congratulations on the purchase.</p>
+      </div>
     </main>
   </body>
 </html>
