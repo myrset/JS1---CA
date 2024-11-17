@@ -33,7 +33,7 @@ async function fetchData() {
         productsHtml.style.gap = '10px';
 
         data.data.forEach(jacket => {
-            const isOnSale = jacket.onSale ? "On sale right now!" : "No sale for you!";
+            const isOnSale = jacket.onSale ? "On sale right now!" : "";
             
             const article = document.createElement("article");
             article.classList.add("jacket");
@@ -59,7 +59,7 @@ async function fetchData() {
         return data.data;
 
     } catch (error) {
-            alert("Fuck")
+            alert("Oops! There was an error!")
             productsHtml.innerHTML = "Sorry, we could not get the products"; 
         console.error("Error fetching data:", error);
     } finally {
@@ -75,7 +75,7 @@ async function filterByCategory(value) {
 
     productsHtml.innerHTML = "";
     filteredData.forEach(jacket => {
-        const isOnSale = jacket.onSale ? "On sale right now!" : "No sale for you!";
+        const isOnSale = jacket.onSale ? "On sale right now!" : "";
         
         const article = document.createElement("article");
         article.classList.add("jacket");

@@ -33,7 +33,7 @@ function displayCart() {
     
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    buyButton.textContent =  `Buy ${cart.length} jackets` 
+    buyButton.textContent =  `Complete purchase` 
 
     if (cart.length === 0) {
         emptyCartText.style.display = "block";

@@ -13,7 +13,7 @@ function displayJacket(jacket) {
     productsHtml.style.justifyContent = 'space-between';
     productsHtml.style.gap = '10px';
 
-    const isOnSale = jacket.onSale ? "On sale right now!" : "No sale for you!";
+    const isOnSale = jacket.onSale ? "On sale right now!" : "";
 
     productsHtml.innerHTML = `
         <article class="jacket">
