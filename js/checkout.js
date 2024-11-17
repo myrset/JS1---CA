@@ -19,7 +19,7 @@
     cartContainer.appendChild(buyButton);
 
     buyButton.addEventListener("click", () => {
-        window.location.href = "/checkout/confirmation/index.html";
+        window.location.href = "checkout/confirmation/index.html";
 });
 
 
