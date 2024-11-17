@@ -160,3 +160,11 @@ cart:hover {
 }
 
 
+.cart {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .empty-cart {
+    display: none;
+  }

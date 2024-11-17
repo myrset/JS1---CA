@@ -5,20 +5,21 @@ const category = document.getElementById("category");
 
 // Fetching the API and also adding a loading indicator as promised
 
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve,ms));
-}
+
 
 async function fetchData() {
     showLoadingIndicator(); // Show loading indicator at the start
 
     try {
 
-        await delay(1000);
+     
 
         const response = await fetch(apiUrl);
         if (!response.ok) {
+            productsHtml.innerHTML = "Sorry, we could not get the products"; 
             throw new Error('No answer from server ' + response.statusText);
+            
+          
         }
 
         const data = await response.json();
@@ -58,6 +59,8 @@ async function fetchData() {
         return data.data;
 
     } catch (error) {
+            alert("Fuck")
+            productsHtml.innerHTML = "Sorry, we could not get the products"; 
         console.error("Error fetching data:", error);
     } finally {
         hideLoadingIndicator(); // Hide loading indicator once my delay is over

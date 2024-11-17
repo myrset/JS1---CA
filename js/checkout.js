@@ -1,17 +1,55 @@
 // Funksjon for å vise innholdet i handlevognen
-function displayCart() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+   
     const cartItemsContainer = document.getElementById("cart-items");
     const cartTotalDisplay = document.getElementById("cart-total");
+    const emptyCartText = document.querySelector(".empty-cart");
+    const cartContainer = document.querySelector(".cart");
+    const buyButton = document.createElement("button");
 
+    buyButton.style.marginTop = "10px";
+    buyButton.style.padding = "5px 10px";
+    buyButton.style.backgroundColor = "green";
+    buyButton.style.color = "#fff";
+    buyButton.style.border = "none";
+    buyButton.style.borderRadius = "5px";
+    buyButton.style.cursor = "pointer";
+   
+
+    cartContainer.appendChild(buyButton);
+
+    buyButton.addEventListener("click", () => {
+        window.location.href = "/checkout/confirmation/index.html";
+});
+
+
+
+
+
+function displayCart() {
+    
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    buyButton.textContent =  `Buy ${cart.length} jackets` 
+
+    if (cart.length === 0) {
+        emptyCartText.style.display = "block";
+        buyButton.style.display = "none";
+      }
+      
     cartItemsContainer.innerHTML = ''; // Tømmer innholdet før oppdatering
 
     let total = 0;
 
     // Går gjennom hvert produkt jeg har lagt  i handlekurven
+          
     cart.forEach(item => {
         const itemElement = document.createElement("div");
-        itemElement.classList.add("cart-item");
+        itemElement.classList.add("cart-item")
+       
+
+          
+        
 
         // Legg til litt styling
         itemElement.style.display = 'flex';
@@ -24,6 +62,8 @@ function displayCart() {
         // Beregn totalen for produktet (pris * antall)
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
+
+        
 
         // Opprett bilde-elementet med styling.. når bildet funker
         const imgElement = document.createElement("img");
@@ -69,8 +109,10 @@ function displayCart() {
         cartItemsContainer.appendChild(itemElement);
     });
 
+    
+
     // Oppdater totalen for hele handlekurven med styling
-    cartTotalDisplay.textContent = `Total: ${total.toFixed(2)} $`;
+    cartTotalDisplay.textContent = `Total: $ ${total.toFixed(2)} `;
     cartTotalDisplay.style.fontSize = '1.2em';
     cartTotalDisplay.style.fontWeight = 'bold';
     cartTotalDisplay.style.marginTop = '15px';
@@ -82,13 +124,17 @@ function displayCart() {
 function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    
+
     // Filtrer bort produktet med gitt ID
     cart = cart.filter(item => item.id !== productId);
 
     // Oppdater handlekurven i localStorage og visningen
     localStorage.setItem('cart', JSON.stringify(cart));
+    
+    loadCart();
     displayCart(); // Oppdater visningen
 }
 
 // visning av handlekurven ved lasting av siden
-document.addEventListener("DOMContentLoaded", displayCart);
+    document.addEventListener("DOMContentLoaded", displayCart);
