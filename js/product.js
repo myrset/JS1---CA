@@ -22,7 +22,9 @@ function displayJacket(jacket) {
             <img class="image-jacket" src="${jacket.image?.url || 'https://via.placeholder.com/150'}" alt="${jacket.title}" />
             <p>Color: ${jacket.baseColor}</p>
             <p>Description: ${jacket.description}</p>
-            <p>${jacket.gender}</p>
+            <p> Designed for ${jacket.gender}</p>            
+            <p>Available in sizes:</p>
+            <p>${jacket.sizes}</p>
             <p>${isOnSale}</p>
         </article>
     `;
