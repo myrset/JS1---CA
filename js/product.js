@@ -3,7 +3,7 @@ const productID = params.get('id');
 
 const productsHtml = document.getElementById("products");
 
-// Funksjon for å vise det spesifikke produktet
+// Function for showing product on my page
 
 function displayJacket(jacket) {
     productsHtml.style.display = 'flex';
@@ -34,7 +34,7 @@ function displayJacket(jacket) {
     productsHtml.querySelector(".jacket").appendChild(button);
 }
 
-// Henter og viser produkt basert på ID
+// Fetching the ID to show product
 
 async function fetchAndDisplayJacket() {
     const apiUrl = `https://v2.api.noroff.dev/rainy-days/${productID}`;
@@ -49,6 +49,6 @@ async function fetchAndDisplayJacket() {
     }
 }
 
-// Kall funksjonen for å hente og vise jakken
+
 
 fetchAndDisplayJacket();

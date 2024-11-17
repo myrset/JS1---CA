@@ -3,8 +3,8 @@ const apiUrl = 'https://v2.api.noroff.dev/rainy-days';
 const productsHtml = document.getElementById("products");
 const category = document.getElementById("category");
 
-// Fetching the API and also adding a loading indicator as promised
 
+// Fetching the API and also adding a loading indicator as promised
 
 
 async function fetchData() {
@@ -63,11 +63,12 @@ async function fetchData() {
             productsHtml.innerHTML = "Sorry, we could not get the products"; 
         console.error("Error fetching data:", error);
     } finally {
-        hideLoadingIndicator(); // Hide loading indicator once my delay is over
+        hideLoadingIndicator(); 
     }
 }
 
 // Filterfunction for the categories I have
+
 async function filterByCategory(value) {
     const data = await fetchData();
     const filteredData = value === "jackets" ? data : data.filter(item => item.gender === value);

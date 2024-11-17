@@ -1,4 +1,4 @@
-// Funksjon for å vise innholdet i handlevognen
+// This will show the stuff I've added to the cart
 
    
     const cartItemsContainer = document.getElementById("cart-items");
@@ -19,10 +19,10 @@
     cartContainer.appendChild(buyButton);
 
     buyButton.addEventListener("click", () => {
-        // Redirect to the confirmation page
+       
         window.location.href = "../checkout/confirmation/index.html";
     
-        // Clear the cart and update the display
+        
         localStorage.removeItem('cart');
         displayCart();
     });
@@ -40,7 +40,7 @@ function displayCart() {
         buyButton.style.display = "none";
       }
       
-    cartItemsContainer.innerHTML = ''; // Tømmer innholdet før oppdatering
+    cartItemsContainer.innerHTML = ''; 
 
     let total = 0;
 
@@ -54,7 +54,7 @@ function displayCart() {
           
         
 
-        // Legg til litt styling
+        // Added minor styling
         itemElement.style.display = 'flex';
         itemElement.style.alignItems = 'center';
         itemElement.style.border = '1px solid #ccc';
@@ -62,13 +62,13 @@ function displayCart() {
         itemElement.style.borderRadius = '5px';
         itemElement.style.gap = '15px';
 
-        // Beregn totalen for produktet (pris * antall)
+        // Estimated total price (price * quantity)
         const itemTotal = item.price * item.quantity;
         total += itemTotal;
 
         
 
-        // Opprett bilde-elementet med styling.. når bildet funker
+        // Show image-element
         const imgElement = document.createElement("img");
         imgElement.src = item.image || 'https://via.placeholder.com/80';
         imgElement.alt = item.name;
@@ -77,12 +77,12 @@ function displayCart() {
         imgElement.style.objectFit = 'cover';
         imgElement.style.borderRadius = '5px';
 
-        // Lag en div for produktdetaljer og legg til styling
+        // Making the div with styling
         const detailsElement = document.createElement("div");
         detailsElement.style.display = 'flex';
         detailsElement.style.flexDirection = 'column';
 
-        // Legg til innholdet for produktdetaljer
+        // Adding stuff for description
         detailsElement.innerHTML = `
             <p style="font-weight: bold; font-size: 1.1em; margin: 0;">${item.name}</p>
             <p style="margin: 5px 0;">Price: ${item.price} $</p>
@@ -90,7 +90,7 @@ function displayCart() {
             <p style="margin: 5px 0;">Total: ${itemTotal.toFixed(2)} $</p>
         `;
 
-        // Opprett fjern-knapp
+        // I made a remove button
         const removeButton = document.createElement("button");
         removeButton.textContent = "Remove";
         removeButton.style.marginTop = '10px';
@@ -101,10 +101,10 @@ function displayCart() {
         removeButton.style.borderRadius = '5px';
         removeButton.style.cursor = 'pointer';
 
-        // Legg til klik-hendelse for fjern-knappen
+        // Onclick fort the remove button
         removeButton.onclick = () => removeFromCart(item.id);
 
-        // Legg til bilde, detaljer og fjern-knapp til produktkortet
+        // Add details, img and removebuttoing 
         itemElement.appendChild(imgElement);
         itemElement.appendChild(detailsElement);
         itemElement.appendChild(removeButton);
@@ -114,7 +114,7 @@ function displayCart() {
 
     
 
-    // Oppdater totalen for hele handlekurven med styling
+    // This will update total for cart. Added style
     cartTotalDisplay.textContent = `Total: $ ${total.toFixed(2)} `;
     cartTotalDisplay.style.fontSize = '1.2em';
     cartTotalDisplay.style.fontWeight = 'bold';
@@ -123,21 +123,21 @@ function displayCart() {
     cartTotalDisplay.style.borderTop = '2px solid #ddd';
 }
 
-// Funksjon for å fjerne et produkt fra handlekurven
+// Simple removefrom cart added
 function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     
 
-    // Filtrer bort produktet med gitt ID
+    // Filtering items 
     cart = cart.filter(item => item.id !== productId);
 
-    // Oppdater handlekurven i localStorage og visningen
+    // updating the cart
     localStorage.setItem('cart', JSON.stringify(cart));
     
     loadCart();
     displayCart(); // Oppdater visningen
 }
 
-// visning av handlekurven ved lasting av siden
+// show cart on load
     document.addEventListener("DOMContentLoaded", displayCart);
