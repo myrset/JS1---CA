@@ -18,7 +18,7 @@ function displayJacket(jacket) {
     productsHtml.innerHTML = `
         <article class="jacket">
             <p>${jacket.title}</p>
-            <p>Price: ${jacket.price}</p>
+            <p>Price: $ ${jacket.price}</p>
             <img class="image-jacket" src="${jacket.image?.url || 'https://via.placeholder.com/150'}" alt="${jacket.title}" />
             <p>Color: ${jacket.baseColor}</p>
             <p>Description: ${jacket.description}</p>

@@ -70,7 +70,7 @@ function displayCart() {
     });
 
     // Oppdater totalen for hele handlekurven med styling
-    cartTotalDisplay.textContent = `Total: ${total.toFixed(2)} kr`;
+    cartTotalDisplay.textContent = `Total: ${total.toFixed(2)} $`;
     cartTotalDisplay.style.fontSize = '1.2em';
     cartTotalDisplay.style.fontWeight = 'bold';
     cartTotalDisplay.style.marginTop = '15px';
