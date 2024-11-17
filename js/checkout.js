@@ -19,8 +19,13 @@
     cartContainer.appendChild(buyButton);
 
     buyButton.addEventListener("click", () => {
+        // Redirect to the confirmation page
         window.location.href = "../checkout/confirmation/index.html";
-});
+    
+        // Clear the cart and update the display
+        localStorage.removeItem('cart');
+        displayCart();
+    });
 
 
 
