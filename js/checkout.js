@@ -42,9 +42,9 @@ function displayCart() {
         // Legg til innholdet for produktdetaljer
         detailsElement.innerHTML = `
             <p style="font-weight: bold; font-size: 1.1em; margin: 0;">${item.name}</p>
-            <p style="margin: 5px 0;">Price: ${item.price} kr</p>
+            <p style="margin: 5px 0;">Price: ${item.price} $</p>
             <p style="margin: 5px 0;">Quantity: ${item.quantity}</p>
-            <p style="margin: 5px 0;">Total: ${itemTotal.toFixed(2)} kr</p>
+            <p style="margin: 5px 0;">Total: ${itemTotal.toFixed(2)} $</p>
         `;
 
         // Opprett fjern-knapp
